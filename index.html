@@ -116,7 +116,7 @@
 
 
             var flag = false;
-            if (snapshot.val().firstTrainTime != "") {
+            if (snapshot.val().firstTrainTime != "" && snapshot.val().frequency != "") {
                 var firstTime = moment(snapshot.val().firstTrainTime, "h:mm");
 
                 while (!flag) {
@@ -128,10 +128,9 @@
                     }
                 }
 
-                if (snapshot.val().frequency != "") {
-                    arrivalTime = firstTime.format("h:mm a");
-                    minutesAway = moment(arrivalTime, "h:mm a").fromNow(true);
-                }
+                arrivalTime = firstTime.format("h:mm a");
+                minutesAway = moment(arrivalTime, "h:mm a").fromNow(true);
+
 
             }
 
